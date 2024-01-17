@@ -2,9 +2,11 @@ import {useDispatch} from 'react-redux';
 import { addToCart } from '../../store/cart';
 
 function ProduceDetails({ produce }) {
-  const cartItem = {};
+  let cartItem = {};
   const dispatch = useDispatch();
-  const onClick = (e) => { dispatch(addToCart(e.target.value)) }
+  const onClick = () => {
+    dispatch(addToCart(produce.id))
+  }
 
   return (
     <li className="produce-details">

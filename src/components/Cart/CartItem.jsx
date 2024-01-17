@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 function CartItem({ item }) {
+  console.log(item)
   const [count, setCount] = useState(item.count);
 
   useEffect(() => {
@@ -9,19 +10,21 @@ function CartItem({ item }) {
 
   return (
     <li className="cart-item">
-      <div className="cart-item-header">{item.name}</div>
+      <div className="cart-item-header">{item.produce.name}</div>
       <div className="cart-item-menu">
         <input
           type="number"
-          value={count}
+          
         />
         <button
           className="cart-item-button"
+          onClick={()=>setCount(count => count + 1)}
         >
           +
         </button>
         <button
           className="cart-item-button"
+          onClick={()=>setCount(count => count - 1)}
         >
           -
         </button>

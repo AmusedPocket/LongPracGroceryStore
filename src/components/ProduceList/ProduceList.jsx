@@ -8,7 +8,10 @@ function ProduceList() {
  
 
   const produceArr = Object.values(produce);
-
+  if(!produceArr.length){ 
+    console.log("entered if")
+    return null
+  };
   return (
     <>
       <h2>All produce</h2>
