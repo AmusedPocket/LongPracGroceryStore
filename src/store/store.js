@@ -1,4 +1,5 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+import produceReducer from './produce';
 
 let enhancer;
 
@@ -12,7 +13,7 @@ if (import.meta.env.MODE !== "production") {
 }
 
 const rootReducer = combineReducers({
-
+    produce: produceReducer
 });
 
 const configureStore = (preloadedState) => {
